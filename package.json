@@ -1,6 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
+  "type": "module",
   "description": "[![Actions Status](https://github.com/KLIMuschka/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/KLIMuschka/frontend-project-lvl1/actions)",
   "main": "index.js",
   "scripts": {
@@ -15,12 +16,16 @@
   "bugs": {
     "url": "https://github.com/KLIMuschka/frontend-project-lvl1/issues"
   },
-  "type": "module",
   "homepage": "https://github.com/KLIMuschka/frontend-project-lvl1#readme",
   "bin": {
     "brain-games": "bin/brain-games.js"
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
   }
 }
