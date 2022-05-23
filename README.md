@@ -4,3 +4,5 @@
 [![Node CI](https://github.com/KLIMuschka/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg)](https://github.com/KLIMuschka/frontend-project-lvl1/actions)
 # Brain-even
 [![asciicast](https://asciinema.org/a/485288.svg)](https://asciinema.org/a/485288)
+# Brain-calc
+[![asciicast](https://asciinema.org/a/496708.svg)](https://asciinema.org/a/496708)
