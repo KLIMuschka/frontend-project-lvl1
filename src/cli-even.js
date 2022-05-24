@@ -21,7 +21,7 @@ const userEven = () => {
     }
 
     if (random % 2 === 0 && answer === 'yes') {
-      console.log('Correct');
+      console.log('Correct!');
     } else if (random % 2 !== 0 && answer === 'no') {
       console.log('Correct!');
     } else {
