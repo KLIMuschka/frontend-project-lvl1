@@ -13,13 +13,13 @@ const bigGcd = name => {
   const number2 = getRandom();
 
   const gsd = (num1, num2) => {
-    const divisor = [];
-    for (let i = 1; i <= 100; i += 1) {
-      if (num1 % i === 0 && num2 % i === 0) {
-        divisor.push(i);
-      }
+    if (num2 > num1) {
+      return gsd(num2, num1);
     }
-    return Math.max.apply(null, divisor);
+    if (num2 === 0) {
+      return num1;
+    }
+    return gsd(num2, num1 % num2);
   };
 
   const result = gsd(number1, number2);
