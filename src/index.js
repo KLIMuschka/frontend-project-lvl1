@@ -18,6 +18,9 @@ export const showCongratulations = name => {
 
 export const getRandom = () => Math.floor(Math.random() * 100);
 
+export const getRandomMinMax = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
+
 export const iteration = (func, name) => {
   for (let i = 1; i <= 3; i += 1) {
     const isRightAnswer = func(name);
