@@ -11,7 +11,7 @@ import {
 const bigPrime = name => {
   const getPrime = num => {
     if (num < 2) {
-      return false;
+      return 'no';
     }
     for (let i = 2; i <= num / 2; i += 1) {
       if (num % i === 0) {
