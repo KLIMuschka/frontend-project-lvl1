@@ -8,7 +8,7 @@ import {
   iteration,
 } from '../index.js';
 
-const bigCalc = name => {
+const bigCalc = (name) => {
   const randomOperations = () => {
     const random = getRandom();
     if (random <= 33) {

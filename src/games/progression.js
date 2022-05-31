@@ -8,7 +8,7 @@ import {
   iteration,
 } from '../index.js';
 
-const bigProgression = name => {
+const bigProgression = (name) => {
   let startNumber = getRandomMinMax(1, 3);
   const totalNumbers = 10;
   const stepOfProgression = getRandomMinMax(2, 6);

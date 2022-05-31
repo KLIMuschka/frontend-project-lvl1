@@ -8,7 +8,7 @@ import {
   iteration,
 } from '../index.js';
 
-const bigGcd = name => {
+const bigGcd = (name) => {
   const number1 = getRandom();
   const number2 = getRandom();
 

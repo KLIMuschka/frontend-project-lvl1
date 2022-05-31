@@ -8,8 +8,8 @@ import {
   iteration,
 } from '../index.js';
 
-const bigPrime = name => {
-  const getPrime = num => {
+const bigPrime = (name) => {
+  const getPrime = (num) => {
     if (num < 2) {
       return 'no';
     }

@@ -8,7 +8,7 @@ import {
   iteration,
 } from '../index.js';
 
-const bigEven = name => {
+const bigEven = (name) => {
   let result;
   const random = getRandom();
 
