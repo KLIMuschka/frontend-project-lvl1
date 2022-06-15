@@ -25,7 +25,12 @@
 
 [![asciicast](https://asciinema.org/a/496986.svg)](https://asciinema.org/a/496986)
 
-### Brain-calc
+## Игра "Калькулятор"
+Запуск игры: `brain-calc`
+
+Необходимо вычислить арифметическое выражение.
+
+#### Демонстрация игры "Калькулятор":
 
 [![asciicast](https://asciinema.org/a/496987.svg)](https://asciinema.org/a/496987)
 
