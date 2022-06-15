@@ -1,4 +1,4 @@
-import readlineSync from 'readline-sync';
+import readlineSync from "readline-sync";
 
 import {
   greeting,
@@ -6,27 +6,27 @@ import {
   showCongratulations,
   getRandom,
   iteration,
-} from '../index.js';
+} from "../index.js";
 
 const bigEven = (name) => {
   let result;
   const random = getRandom();
 
   console.log(`Question: ${random}`);
-  const answer = readlineSync.question('Your answer: ');
+  const answer = readlineSync.question("Your answer: ");
   if (random % 2 === 0) {
-    result = 'yes';
+    result = "yes";
   }
   if (random % 2 !== 0) {
-    result = 'no';
+    result = "no";
   }
 
-  if (random % 2 === 0 && answer === 'yes') {
-    console.log('Correct!');
+  if (random % 2 === 0 && answer === "yes") {
+    console.log("Correct!");
     return true;
   }
-  if (random % 2 !== 0 && answer === 'no') {
-    console.log('Correct!');
+  if (random % 2 !== 0 && answer === "no") {
+    console.log("Correct!");
     return true;
   }
   showMistake(name, answer, result);

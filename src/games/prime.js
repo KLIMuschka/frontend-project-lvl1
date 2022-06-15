@@ -1,4 +1,4 @@
-import readlineSync from 'readline-sync';
+import readlineSync from "readline-sync";
 
 import {
   greeting,
@@ -6,33 +6,33 @@ import {
   showCongratulations,
   getRandom,
   iteration,
-} from '../index.js';
+} from "../index.js";
 
 const bigPrime = (name) => {
   const getPrime = (num) => {
     if (num < 2) {
-      return 'no';
+      return "no";
     }
     for (let i = 2; i <= num / 2; i += 1) {
       if (num % i === 0) {
-        return 'no';
+        return "no";
       }
     }
-    return 'yes';
+    return "yes";
   };
 
   const question = getRandom();
   const result = getPrime(question);
 
   console.log(`Question: ${question}`);
-  const answer = readlineSync.question('Your answer: ');
+  const answer = readlineSync.question("Your answer: ");
 
-  if (result === 'yes' && answer === 'yes') {
-    console.log('Correct!');
+  if (result === "yes" && answer === "yes") {
+    console.log("Correct!");
     return true;
   }
-  if (result === 'no' && answer === 'no') {
-    console.log('Correct!');
+  if (result === "no" && answer === "no") {
+    console.log("Correct!");
     return true;
   }
   showMistake(name, answer, result);

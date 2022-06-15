@@ -1,4 +1,4 @@
-import readlineSync from 'readline-sync';
+import readlineSync from "readline-sync";
 
 import {
   greeting,
@@ -6,7 +6,7 @@ import {
   showCongratulations,
   getRandomMinMax,
   iteration,
-} from '../index.js';
+} from "../index.js";
 
 const bigProgression = (name) => {
   let startNumber = getRandomMinMax(1, 3);
@@ -21,14 +21,14 @@ const bigProgression = (name) => {
   }
 
   const result = array[index];
-  array[index] = '..';
-  const question = array.join(' ');
+  array[index] = "..";
+  const question = array.join(" ");
 
   console.log(`Question: ${question}`);
-  const answer = readlineSync.question('Your answer: ');
+  const answer = readlineSync.question("Your answer: ");
 
   if (result === +answer) {
-    console.log('Correct!');
+    console.log("Correct!");
     return true;
   }
   showMistake(name, answer, result);
@@ -37,7 +37,7 @@ const bigProgression = (name) => {
 
 const userProgression = () => {
   const userName = greeting();
-  console.log('What number is missing in the progression?');
+  console.log("What number is missing in the progression?");
   const allAnswersRight = iteration(bigProgression, userName);
   if (allAnswersRight) {
     showCongratulations(userName);
