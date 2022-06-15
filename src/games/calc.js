@@ -50,6 +50,4 @@ const userCalc = () => {
   }
 };
 
-userCalc();
-
 export default userCalc;
