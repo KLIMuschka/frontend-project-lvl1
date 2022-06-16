@@ -1,12 +1,6 @@
 import readlineSync from 'readline-sync';
 
-import {
-  greeting,
-  showMistake,
-  showCongratulations,
-  getRandom,
-  iteration,
-} from '../index.js';
+import { showMistake, getRandom, runGame } from '../index.js';
 
 const bigPrime = (name) => {
   const getPrime = (num) => {
@@ -40,12 +34,8 @@ const bigPrime = (name) => {
 };
 
 const userPrime = () => {
-  const userName = greeting();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  const allAnswersRight = iteration(bigPrime, userName);
-  if (allAnswersRight) {
-    showCongratulations(userName);
-  }
+  const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  runGame(rule, bigPrime);
 };
 
 export default userPrime;

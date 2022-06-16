@@ -1,12 +1,6 @@
 import readlineSync from 'readline-sync';
 
-import {
-  greeting,
-  showMistake,
-  showCongratulations,
-  getRandomMinMax,
-  iteration,
-} from '../index.js';
+import { showMistake, getRandomMinMax, runGame } from '../index.js';
 
 const bigProgression = (name) => {
   let startNumber = getRandomMinMax(1, 3);
@@ -36,12 +30,8 @@ const bigProgression = (name) => {
 };
 
 const userProgression = () => {
-  const userName = greeting();
-  console.log('What number is missing in the progression?');
-  const allAnswersRight = iteration(bigProgression, userName);
-  if (allAnswersRight) {
-    showCongratulations(userName);
-  }
+  const rule = 'What number is missing in the progression?';
+  runGame(rule, bigProgression);
 };
 
 export default userProgression;

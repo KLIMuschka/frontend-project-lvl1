@@ -1,12 +1,6 @@
 import readlineSync from 'readline-sync';
 
-import {
-  greeting,
-  showMistake,
-  showCongratulations,
-  getRandom,
-  iteration,
-} from '../index.js';
+import { runGame, showMistake, getRandom } from '../index.js';
 
 const bigEven = (name) => {
   let result;
@@ -34,12 +28,8 @@ const bigEven = (name) => {
 };
 
 const userEven = () => {
-  const userName = greeting();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const allAnswersRight = iteration(bigEven, userName);
-  if (allAnswersRight) {
-    showCongratulations(userName);
-  }
+  const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
+  runGame(rule, bigEven);
 };
 
 export default userEven;

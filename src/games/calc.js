@@ -1,12 +1,6 @@
 import readlineSync from 'readline-sync';
 
-import {
-  greeting,
-  showMistake,
-  showCongratulations,
-  getRandom,
-  iteration,
-} from '../index.js';
+import { showMistake, getRandom, runGame } from '../index.js';
 
 const bigCalc = (name) => {
   const randomOperations = () => {
@@ -42,12 +36,8 @@ const bigCalc = (name) => {
 };
 
 const userCalc = () => {
-  const userName = greeting();
-  console.log('What is the result of the expression?');
-  const allAnswersRight = iteration(bigCalc, userName);
-  if (allAnswersRight) {
-    showCongratulations(userName);
-  }
+  const rule = 'What is the result of the expression?';
+  runGame(rule, bigCalc);
 };
 
 export default userCalc;

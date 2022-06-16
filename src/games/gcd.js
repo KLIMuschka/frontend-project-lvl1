@@ -1,12 +1,6 @@
 import readlineSync from 'readline-sync';
 
-import {
-  greeting,
-  showMistake,
-  showCongratulations,
-  getRandom,
-  iteration,
-} from '../index.js';
+import { showMistake, getRandom, runGame } from '../index.js';
 
 const bigGcd = (name) => {
   const number1 = getRandom();
@@ -35,12 +29,8 @@ const bigGcd = (name) => {
 };
 
 const userGcd = () => {
-  const userName = greeting();
-  console.log('Find the greatest common divisor of given numbers.');
-  const allAnswersRight = iteration(bigGcd, userName);
-  if (allAnswersRight) {
-    showCongratulations(userName);
-  }
+  const rule = 'Find the greatest common divisor of given numbers.';
+  runGame(rule, bigGcd);
 };
 
 export default userGcd;

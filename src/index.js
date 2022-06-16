@@ -31,3 +31,12 @@ export const iteration = (func, name) => {
   }
   return true;
 };
+
+export const runGame = (rule, game) => {
+  const userName = greeting();
+  console.log(rule);
+  const allAnswersRight = iteration(game, userName);
+  if (allAnswersRight) {
+    showCongratulations(userName);
+  }
+};
