@@ -1,6 +1,11 @@
-import readlineSync from 'readline-sync';
-
-import { showMistake, getRandom, runGame } from '../index.js';
+import {
+  showMistake,
+  getRandom,
+  runGame,
+  getQuestion,
+  getAnswer,
+  isRight,
+} from '../index.js';
 
 const bigPrime = (name) => {
   const getPrime = (num) => {
@@ -15,18 +20,18 @@ const bigPrime = (name) => {
     return 'yes';
   };
 
-  const question = getRandom();
-  const result = getPrime(question);
-
-  console.log(`Question: ${question}`);
-  const answer = readlineSync.question('Your answer: ');
+  const isquestion = getRandom();
+  const result = getPrime(isquestion);
+  const question = `${isquestion}`;
+  getQuestion(question);
+  const answer = getAnswer();
 
   if (result === 'yes' && answer === 'yes') {
-    console.log('Correct!');
+    isRight();
     return true;
   }
   if (result === 'no' && answer === 'no') {
-    console.log('Correct!');
+    isRight();
     return true;
   }
   showMistake(name, answer, result);

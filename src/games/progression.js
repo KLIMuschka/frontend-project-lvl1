@@ -1,6 +1,11 @@
-import readlineSync from 'readline-sync';
-
-import { showMistake, getRandomMinMax, runGame } from '../index.js';
+import {
+  showMistake,
+  getRandomMinMax,
+  runGame,
+  getQuestion,
+  getAnswer,
+  isRight,
+} from '../index.js';
 
 const bigProgression = (name) => {
   let startNumber = getRandomMinMax(1, 3);
@@ -16,13 +21,14 @@ const bigProgression = (name) => {
 
   const result = array[index];
   array[index] = '..';
-  const question = array.join(' ');
+  const isquestion = array.join(' ');
 
-  console.log(`Question: ${question}`);
-  const answer = readlineSync.question('Your answer: ');
+  const question = `${isquestion}`;
+  getQuestion(question);
+  const answer = getAnswer();
 
   if (result === +answer) {
-    console.log('Correct!');
+    isRight();
     return true;
   }
   showMistake(name, answer, result);

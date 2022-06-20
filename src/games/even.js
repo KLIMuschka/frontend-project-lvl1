@@ -1,13 +1,18 @@
-import readlineSync from 'readline-sync';
-
-import { runGame, showMistake, getRandom } from '../index.js';
+import {
+  runGame,
+  showMistake,
+  getRandom,
+  getQuestion,
+  getAnswer,
+  isRight,
+} from '../index.js';
 
 const bigEven = (name) => {
   let result;
   const random = getRandom();
-
-  console.log(`Question: ${random}`);
-  const answer = readlineSync.question('Your answer: ');
+  const question = random;
+  getQuestion(question);
+  const answer = getAnswer();
   if (random % 2 === 0) {
     result = 'yes';
   }
@@ -16,11 +21,11 @@ const bigEven = (name) => {
   }
 
   if (random % 2 === 0 && answer === 'yes') {
-    console.log('Correct!');
+    isRight();
     return true;
   }
   if (random % 2 !== 0 && answer === 'no') {
-    console.log('Correct!');
+    isRight();
     return true;
   }
   showMistake(name, answer, result);

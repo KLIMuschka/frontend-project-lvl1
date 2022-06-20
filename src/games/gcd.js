@@ -1,6 +1,11 @@
-import readlineSync from 'readline-sync';
-
-import { showMistake, getRandom, runGame } from '../index.js';
+import {
+  showMistake,
+  getRandom,
+  runGame,
+  getQuestion,
+  getAnswer,
+  isRight,
+} from '../index.js';
 
 const bigGcd = (name) => {
   const number1 = getRandom();
@@ -17,11 +22,12 @@ const bigGcd = (name) => {
   };
 
   const result = gsd(number1, number2);
-  console.log(`Question: ${number1} ${number2}`);
-  const answer = readlineSync.question('Your answer: ');
+  const question = `${number1} ${number2}`;
+  getQuestion(question);
+  const answer = getAnswer();
 
   if (result === +answer) {
-    console.log('Correct!');
+    isRight();
     return true;
   }
   showMistake(name, answer, result);

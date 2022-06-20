@@ -1,6 +1,11 @@
-import readlineSync from 'readline-sync';
-
-import { showMistake, getRandom, runGame } from '../index.js';
+import {
+  showMistake,
+  getRandom,
+  runGame,
+  getQuestion,
+  getAnswer,
+  isRight,
+} from '../index.js';
 
 const bigCalc = (name) => {
   const randomOperations = () => {
@@ -24,11 +29,12 @@ const bigCalc = (name) => {
   } else {
     result = number1 * number2;
   }
-  console.log(`Question: ${number1} ${operation} ${number2}`);
-  const answer = readlineSync.question('Your answer: ');
+  const question = `${number1} ${operation} ${number2}`;
+  getQuestion(question);
+  const answer = getAnswer();
 
   if (result === +answer) {
-    console.log('Correct!');
+    isRight();
     return true;
   }
   showMistake(name, answer, result);

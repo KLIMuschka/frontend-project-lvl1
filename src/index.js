@@ -22,8 +22,10 @@ export const getRandom = () => Math.floor(Math.random() * 100);
 
 export const getRandomMinMax = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
+const numberOfRounds = 3;
+
 export const iteration = (func, name) => {
-  for (let i = 1; i <= 3; i += 1) {
+  for (let i = 1; i <= numberOfRounds; i += 1) {
     const isRightAnswer = func(name);
     if (!isRightAnswer) {
       return false;
@@ -40,3 +42,9 @@ export const runGame = (rule, game) => {
     showCongratulations(userName);
   }
 };
+
+export const getQuestion = (question) => console.log(`Question: ${question}`);
+
+export const getAnswer = () => readlineSync.question('Your answer: ');
+
+export const isRight = () => console.log('Correct!');
