@@ -1,17 +1,17 @@
 import {
   showMistake,
-  getRandomMinMax,
   runGame,
   getQuestion,
   getAnswer,
   isRight,
 } from '../index.js';
+import getRandom from '../utility.js';
 
 const bigProgression = (name) => {
-  let startNumber = getRandomMinMax(1, 3);
+  let startNumber = getRandom(1, 3);
   const totalNumbers = 10;
-  const stepOfProgression = getRandomMinMax(2, 6);
-  const index = getRandomMinMax(0, 9);
+  const stepOfProgression = getRandom(2, 6);
+  const index = getRandom(0, 9);
   const array = [];
 
   for (let i = 1; i <= totalNumbers; i += 1) {

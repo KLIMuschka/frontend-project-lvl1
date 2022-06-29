@@ -1,11 +1,11 @@
 import {
   showMistake,
-  getRandom,
   runGame,
   getQuestion,
   getAnswer,
   isRight,
 } from '../index.js';
+import getRandom from '../utility.js';
 
 const bigPrime = (name) => {
   const getPrime = (num) => {

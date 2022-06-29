@@ -1,11 +1,11 @@
 import {
   runGame,
   showMistake,
-  getRandom,
   getQuestion,
   getAnswer,
   isRight,
 } from '../index.js';
+import getRandom from '../utility.js';
 
 const bigEven = (name) => {
   let result;
