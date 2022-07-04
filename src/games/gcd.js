@@ -1,42 +1,28 @@
-import {
-  showMistake,
-  runGame,
-  getQuestion,
-  getAnswer,
-  isRight,
-} from '../index.js';
+import runGame from '../index.js';
 import getRandom from '../utility.js';
 
-const bigGcd = (name) => {
+const runGcd = (num1, num2) => {
+  if (num2 > num1) {
+    return runGcd(num2, num1);
+  }
+  if (num2 === 0) {
+    return num1;
+  }
+  return runGcd(num2, num1 % num2);
+};
+
+const showGcd = () => {
   const number1 = getRandom();
   const number2 = getRandom();
-
-  const gsd = (num1, num2) => {
-    if (num2 > num1) {
-      return gsd(num2, num1);
-    }
-    if (num2 === 0) {
-      return num1;
-    }
-    return gsd(num2, num1 % num2);
-  };
-
-  const result = gsd(number1, number2);
+  const result = runGcd(number1, number2);
   const question = `${number1} ${number2}`;
-  getQuestion(question);
-  const answer = getAnswer();
 
-  if (result === +answer) {
-    isRight();
-    return true;
-  }
-  showMistake(name, answer, result);
-  return false;
+  return [result, question];
 };
 
-const userGcd = () => {
+const getGcd = () => {
   const rule = 'Find the greatest common divisor of given numbers.';
-  runGame(rule, bigGcd);
+  runGame(rule, showGcd);
 };
 
-export default userGcd;
+export default getGcd;

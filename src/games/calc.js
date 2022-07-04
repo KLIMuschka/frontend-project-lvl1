@@ -1,44 +1,36 @@
-import {
-  showMistake,
-  runGame,
-  getQuestion,
-  getAnswer,
-  isRight,
-} from '../index.js';
+import runGame from '../index.js';
 import getRandom from '../utility.js';
 
 const getOperation = () => {
   const array = ['+', '-', '*'];
-  return array[getRandom(0, 2)];
+  return array[getRandom(0, array.length - 1)];
 };
 
-const bigCalc = (name) => {
+const getResult = (number1, number2, operation) => {
+  if (operation === '+') {
+    return number1 + number2;
+  }
+  if (operation === '-') {
+    return number1 - number2;
+  }
+  return number1 * number2;
+};
+
+const showCalc = () => {
   const operation = getOperation();
   const number1 = getRandom(0, 30);
   const number2 = getRandom(0, 30);
-  let result;
-  if (operation === '+') {
-    result = number1 + number2;
-  } else if (operation === '-') {
-    result = number1 - number2;
-  } else {
-    result = number1 * number2;
-  }
+
+  const result = getResult(number1, number2, operation);
+
   const question = `${number1} ${operation} ${number2}`;
-  getQuestion(question);
-  const answer = getAnswer();
 
-  if (result === +answer) {
-    isRight();
-    return true;
-  }
-  showMistake(name, answer, result);
-  return false;
+  return [result, question];
 };
 
-const userCalc = () => {
+const getCalc = () => {
   const rule = 'What is the result of the expression?';
-  runGame(rule, bigCalc);
+  runGame(rule, showCalc);
 };
 
-export default userCalc;
+export default getCalc;

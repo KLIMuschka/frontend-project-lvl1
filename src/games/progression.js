@@ -1,13 +1,7 @@
-import {
-  showMistake,
-  runGame,
-  getQuestion,
-  getAnswer,
-  isRight,
-} from '../index.js';
+import runGame from '../index.js';
 import getRandom from '../utility.js';
 
-const bigProgression = (name) => {
+const showProgression = () => {
   let startNumber = getRandom(1, 3);
   const totalNumbers = 10;
   const stepOfProgression = getRandom(2, 6);
@@ -24,20 +18,13 @@ const bigProgression = (name) => {
   const isquestion = array.join(' ');
 
   const question = `${isquestion}`;
-  getQuestion(question);
-  const answer = getAnswer();
 
-  if (result === +answer) {
-    isRight();
-    return true;
-  }
-  showMistake(name, answer, result);
-  return false;
+  return [result, question];
 };
 
-const userProgression = () => {
+const getProgression = () => {
   const rule = 'What number is missing in the progression?';
-  runGame(rule, bigProgression);
+  runGame(rule, showProgression);
 };
 
-export default userProgression;
+export default getProgression;

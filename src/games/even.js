@@ -1,40 +1,24 @@
-import {
-  runGame,
-  showMistake,
-  getQuestion,
-  getAnswer,
-  isRight,
-} from '../index.js';
+import runGame from '../index.js';
 import getRandom from '../utility.js';
 
-const bigEven = (name) => {
-  let result;
+const getResult = (num) => {
+  if (num % 2 === 0) {
+    return 'yes';
+  }
+  return 'no';
+};
+
+const showEven = () => {
   const random = getRandom();
+  const result = getResult(random);
   const question = random;
-  getQuestion(question);
-  const answer = getAnswer();
-  if (random % 2 === 0) {
-    result = 'yes';
-  }
-  if (random % 2 !== 0) {
-    result = 'no';
-  }
 
-  if (random % 2 === 0 && answer === 'yes') {
-    isRight();
-    return true;
-  }
-  if (random % 2 !== 0 && answer === 'no') {
-    isRight();
-    return true;
-  }
-  showMistake(name, answer, result);
-  return false;
+  return [result, question];
 };
 
-const userEven = () => {
+const getEven = () => {
   const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
-  runGame(rule, bigEven);
+  runGame(rule, showEven);
 };
 
-export default userEven;
+export default getEven;
