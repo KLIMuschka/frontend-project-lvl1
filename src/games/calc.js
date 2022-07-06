@@ -1,23 +1,24 @@
-import runGame from '../index.js';
+import engineOfGames from '../index.js';
 import getRandom from '../utility.js';
 
-const getOperation = () => {
-  const array = ['+', '-', '*'];
-  return array[getRandom(0, array.length - 1)];
-};
+const description = 'What is the result of the expression?';
 
 const getResult = (number1, number2, operation) => {
-  if (operation === '+') {
-    return number1 + number2;
+  switch (operation) {
+    case '+':
+      return number1 + number2;
+    case '-':
+      return number1 - number2;
+    case '*':
+      return number1 * number2;
+    default:
+      return false;
   }
-  if (operation === '-') {
-    return number1 - number2;
-  }
-  return number1 * number2;
 };
 
-const showCalc = () => {
-  const operation = getOperation();
+const getData = () => {
+  const operations = ['+', '-', '*'];
+  const operation = operations[getRandom(0, operations.length - 1)];
   const number1 = getRandom(0, 30);
   const number2 = getRandom(0, 30);
 
@@ -28,9 +29,8 @@ const showCalc = () => {
   return [result, question];
 };
 
-const getCalc = () => {
-  const rule = 'What is the result of the expression?';
-  runGame(rule, showCalc);
+const playGame = () => {
+  engineOfGames(description, getData);
 };
 
-export default getCalc;
+export default playGame;

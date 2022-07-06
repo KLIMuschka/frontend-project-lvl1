@@ -1,7 +1,9 @@
-import runGame from '../index.js';
+import engineOfGames from '../index.js';
 import getRandom from '../utility.js';
 
-const showProgression = () => {
+const description = 'What number is missing in the progression?';
+
+const getData = () => {
   let startNumber = getRandom(1, 3);
   const totalNumbers = 10;
   const stepOfProgression = getRandom(2, 6);
@@ -15,16 +17,13 @@ const showProgression = () => {
 
   const result = array[index];
   array[index] = '..';
-  const isquestion = array.join(' ');
-
-  const question = `${isquestion}`;
+  const question = array.join(' ');
 
   return [result, question];
 };
 
-const getProgression = () => {
-  const rule = 'What number is missing in the progression?';
-  runGame(rule, showProgression);
+const playGame = () => {
+  engineOfGames(description, getData);
 };
 
-export default getProgression;
+export default playGame;
