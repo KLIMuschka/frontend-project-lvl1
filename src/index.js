@@ -10,10 +10,15 @@ const engineOfGames = (description, game) => {
   console.log(description);
 
   for (let i = 1; i <= countOfRounds; i += 1) {
-    const gameResult = game();
+    const [result, question] = game();
+    /* const gameResult = game();
     console.log(`Question: ${gameResult[1]}`);
     const answer = readlineSync.question('Your answer: ');
-    const result = gameResult[0];
+    const result = gameResult[0]; */
+
+    console.log(`Question: ${question}`);
+    const answer = readlineSync.question('Your answer: ');
+
     if (String(result) !== String(answer)) {
       console.log(
         `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`,
