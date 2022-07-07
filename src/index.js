@@ -6,16 +6,10 @@ const engineOfGames = (description, game) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-
   console.log(description);
 
   for (let i = 1; i <= countOfRounds; i += 1) {
     const [result, question] = game();
-    /* const gameResult = game();
-    console.log(`Question: ${gameResult[1]}`);
-    const answer = readlineSync.question('Your answer: ');
-    const result = gameResult[0]; */
-
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
