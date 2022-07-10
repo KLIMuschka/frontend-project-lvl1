@@ -13,7 +13,7 @@ const getGcd = (num1, num2) => {
   return getGcd(num2, num1 % num2);
 };
 
-const getData = () => {
+const getRoundData = () => {
   const number1 = getRandom();
   const number2 = getRandom();
   const result = getGcd(number1, number2);
@@ -23,7 +23,7 @@ const getData = () => {
 };
 
 const playGame = () => {
-  engineOfGames(description, getData);
+  engineOfGames(description, getRoundData);
 };
 
 export default playGame;

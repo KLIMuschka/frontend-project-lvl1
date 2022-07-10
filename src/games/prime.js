@@ -17,7 +17,7 @@ const getPrime = (num) => {
 
 const getResult = (num) => (getPrime(num) ? 'yes' : 'no');
 
-const getData = () => {
+const getRoundData = () => {
   const isquestion = getRandom();
   const result = getResult(isquestion);
 
@@ -27,7 +27,7 @@ const getData = () => {
 };
 
 const playGame = () => {
-  engineOfGames(description, getData);
+  engineOfGames(description, getRoundData);
 };
 
 export default playGame;

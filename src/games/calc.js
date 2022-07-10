@@ -12,12 +12,13 @@ const getResult = (number1, number2, operation) => {
     case '*':
       return number1 * number2;
     default:
-      return false;
+      throw new Error(`Unknown operation: '${operation}'!`);
   }
 };
 
-const getData = () => {
-  const operations = ['+', '-', '*'];
+const operations = ['+', '-', '*'];
+
+const getRoundData = () => {
   const operation = operations[getRandom(0, operations.length - 1)];
   const number1 = getRandom(0, 30);
   const number2 = getRandom(0, 30);
@@ -30,7 +31,7 @@ const getData = () => {
 };
 
 const playGame = () => {
-  engineOfGames(description, getData);
+  engineOfGames(description, getRoundData);
 };
 
 export default playGame;

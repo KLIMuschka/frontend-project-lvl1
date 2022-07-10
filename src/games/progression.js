@@ -3,17 +3,16 @@ import getRandom from '../utility.js';
 
 const description = 'What number is missing in the progression?';
 
-const generateOfProgression = (num1, num2, num3) => {
+const generateOfProgression = (totalNumbers, result, stepOfProgression) => {
   const array = [];
-  let num4 = num2;
-  for (let i = 1; i <= num1; i += 1) {
-    num4 += num3;
-    array.push(num4);
+  for (let i = 1; i <= totalNumbers; i += 1) {
+    result += stepOfProgression;
+    array.push(result);
   }
   return array;
 };
 
-const getData = () => {
+const getRoundData = () => {
   const startNumber = getRandom(1, 3);
   const totalNumbers = 10;
   const stepOfProgression = getRandom(2, 6);
@@ -32,7 +31,7 @@ const getData = () => {
 };
 
 const playGame = () => {
-  engineOfGames(description, getData);
+  engineOfGames(description, getRoundData);
 };
 
 export default playGame;

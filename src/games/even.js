@@ -7,7 +7,7 @@ const getEven = (num) => num % 2 === 0;
 
 const getResult = (num) => (getEven(num) ? 'yes' : 'no');
 
-const getData = () => {
+const getRoundData = () => {
   const random = getRandom();
   const result = getResult(random);
   const question = random;
@@ -16,7 +16,7 @@ const getData = () => {
 };
 
 const playGame = () => {
-  engineOfGames(description, getData);
+  engineOfGames(description, getRoundData);
 };
 
 export default playGame;
