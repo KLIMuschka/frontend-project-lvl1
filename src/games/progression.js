@@ -3,11 +3,15 @@ import getRandom from '../utility.js';
 
 const description = 'What number is missing in the progression?';
 
-const generateOfProgression = (totalNumbers, result, stepOfProgression) => {
+const generateOfProgression = (
+  totalNumbers,
+  startNumber,
+  stepOfProgression,
+) => {
   const array = [];
-  for (let i = 1; i <= totalNumbers; i += 1) {
-    result += stepOfProgression;
-    array.push(result);
+  const total = totalNumbers * stepOfProgression;
+  for (let i = startNumber; i <= total; i += stepOfProgression) {
+    array.push(i);
   }
   return array;
 };
