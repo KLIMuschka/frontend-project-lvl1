@@ -3,15 +3,10 @@ import getRandom from '../utility.js';
 
 const description = 'What number is missing in the progression?';
 
-const generateOfProgression = (
-  totalNumbers,
-  startNumber,
-  stepOfProgression,
-) => {
+const generateOfProgression = (length, startNumber, stepOfProgression) => {
   const array = [];
-  const total = totalNumbers * stepOfProgression;
-  for (let i = startNumber; i <= total; i += stepOfProgression) {
-    array.push(i);
+  for (let i = 0; i <= length; i += 1) {
+    array.push(startNumber + stepOfProgression * i);
   }
   return array;
 };
@@ -22,16 +17,16 @@ const getRoundData = () => {
   const stepOfProgression = getRandom(2, 6);
   const index = getRandom(0, 9);
 
-  const getresult = generateOfProgression(
+  const progression = generateOfProgression(
     totalNumbers,
     startNumber,
     stepOfProgression,
   );
-  const result = getresult[index];
-  getresult[index] = '..';
-  const question = getresult.join(' ');
+  const hiddenNumber = progression[index];
+  progression[index] = '..';
+  const question = progression.join(' ');
 
-  return [result, question];
+  return [hiddenNumber, question];
 };
 
 const playGame = () => {

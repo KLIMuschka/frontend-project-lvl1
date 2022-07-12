@@ -3,7 +3,7 @@ import getRandom from '../utility.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getPrime = (num) => {
+const isPrime = (num) => {
   if (num < 2) {
     return false;
   }
@@ -15,15 +15,11 @@ const getPrime = (num) => {
   return true;
 };
 
-const getResult = (num) => (getPrime(num) ? 'yes' : 'no');
-
 const getRoundData = () => {
-  const isquestion = getRandom();
-  const result = getResult(isquestion);
+  const randomNumber = getRandom();
+  const result = isPrime(randomNumber) ? 'yes' : 'no';
 
-  const question = `${isquestion}`;
-
-  return [result, question];
+  return [result, randomNumber];
 };
 
 const playGame = () => {

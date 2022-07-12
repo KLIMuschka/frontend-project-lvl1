@@ -3,13 +3,11 @@ import getRandom from '../utility.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getEven = (num) => num % 2 === 0;
-
-const getResult = (num) => (getEven(num) ? 'yes' : 'no');
+const isEven = (num) => num % 2 === 0;
 
 const getRoundData = () => {
   const random = getRandom();
-  const result = getResult(random);
+  const result = isEven(random) ? 'yes' : 'no';
   const question = random;
 
   return [result, question];
