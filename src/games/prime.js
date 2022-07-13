@@ -1,5 +1,5 @@
 import engineOfGames from '../index.js';
-import getRandom from '../utility.js';
+import getRandomNumber from '../utility.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -16,7 +16,7 @@ const isPrime = (num) => {
 };
 
 const getRoundData = () => {
-  const randomNumber = getRandom();
+  const randomNumber = getRandomNumber();
   const result = isPrime(randomNumber) ? 'yes' : 'no';
 
   return [result, randomNumber];

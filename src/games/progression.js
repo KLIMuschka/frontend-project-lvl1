@@ -1,5 +1,5 @@
 import engineOfGames from '../index.js';
-import getRandom from '../utility.js';
+import getRandomNumber from '../utility.js';
 
 const description = 'What number is missing in the progression?';
 
@@ -12,10 +12,10 @@ const generateOfProgression = (length, startNumber, stepOfProgression) => {
 };
 
 const getRoundData = () => {
-  const startNumber = getRandom(1, 3);
+  const startNumber = getRandomNumber(1, 3);
   const totalNumbers = 10;
-  const stepOfProgression = getRandom(2, 6);
-  const index = getRandom(0, 9);
+  const stepOfProgression = getRandomNumber(2, 6);
+  const index = getRandomNumber(0, 9);
 
   const progression = generateOfProgression(
     totalNumbers,

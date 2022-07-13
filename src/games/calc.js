@@ -1,5 +1,5 @@
 import engineOfGames from '../index.js';
-import getRandom from '../utility.js';
+import getRandomNumber from '../utility.js';
 
 const description = 'What is the result of the expression?';
 
@@ -19,9 +19,9 @@ const getResult = (number1, number2, operation) => {
 const operations = ['+', '-', '*'];
 
 const getRoundData = () => {
-  const operation = operations[getRandom(0, operations.length - 1)];
-  const number1 = getRandom(0, 30);
-  const number2 = getRandom(0, 30);
+  const operation = operations[getRandomNumber(0, operations.length - 1)];
+  const number1 = getRandomNumber(0, 30);
+  const number2 = getRandomNumber(0, 30);
 
   const result = getResult(number1, number2, operation);
 
